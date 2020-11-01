@@ -65,7 +65,7 @@ class ContractorController extends Controller
 
         } else {
 
-            return redirect()->route('contractor.index')->with('error', 'Ошибка добавления записи');
+            return redirect()->back()->with('error', 'Ошибка добавления записи');
         }
 
 

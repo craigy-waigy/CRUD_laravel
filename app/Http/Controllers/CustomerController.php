@@ -64,7 +64,7 @@ class CustomerController extends Controller
 
         } else {
 
-            return redirect()->route('customer.index')->with('error', 'Ошибка добавления записи');
+            return redirect()->back()->with('error', 'Ошибка добавления записи');
         }
 
 
