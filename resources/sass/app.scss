@@ -1,0 +1,116 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+
+html{
+  overflow: scroll;
+}
+body{
+  font-family: $fontFamilyNunito;
+}
+a, .btn-link{
+  color: $darkLinkColor;
+}
+a:hover, .btn-link:hover{
+  transition: 0.3s;
+  color: $greenColor;
+  text-decoration: none;
+}
+.crm_wrapper{
+  font-size: $fontSizeBase;
+}
+.crm_action_delete_form{
+  display: inline;
+}
+.crm_action{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+.crm_action_td{
+  text-align: right;
+}
+.invalid-feedback {
+  color: $redColor;
+}
+
+.crm_table th, .crm_table td {
+  vertical-align: middle;
+}
+#contract_date{
+  width: 180px;
+}
+.stat_header{
+  text-align: center;
+  padding: 0 0 1vw 0;
+}
+.navbar-brand{
+  font-size: 28px;
+}
+.navbar-light .navbar-nav .nav-link,.nav-item .dropdown-item{
+  color: $darkLinkColor;
+  font-size: $fontSizeBase;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: $greenColor;
+}
+.btn{
+  font-size: $fontSizeBase;
+}
+.btn-success, .btn-primary{
+  background-color: $greenColor;
+  border-color: $greenColor;
+}
+.btn-success:hover, .btn-primary:hover{
+  background-color: $darkGreenColor;
+  border-color: $darkGreenColor;
+}
+.btn-danger {
+  background-color: $redColor;
+  border-color: $redColor;
+}
+.dropdown-item.active, .dropdown-item:active {
+  background-color: $greenColor;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+  color: $greenColor;
+  background-color: #ffffff;
+}
+.page-item.active .page-link {
+  background-color: $greenColor;
+  border-color: $greenColor;
+}
+.page-link {
+  color: $darkGreenColor;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: $superLightGreen;
+}
+.card-header {
+  background-color: $superLightGreen;
+}
+.table thead th {
+  border-bottom: 1px solid $lightGreenColor;
+}
+.form-check-label:hover{
+  cursor: pointer;
+}
+.crm_wrapper input, .crm_wrapper select{
+  font-size: $fontSizeBase;
+}
+.github_oauth_logo{
+  width: 50px;
+}
+.alert-success{
+  color: $textColor;
+  background-color: $superLightGreen;
+  border-color: $superLightGreen;
+}
+
+//@import "media";
