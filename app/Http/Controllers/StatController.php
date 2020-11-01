@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Contract;
+use App\Helpers\StatHelper;
 use App\Services\ChartService;
-use Illuminate\Support\Facades\DB;
 
 class StatController extends Controller
 {
@@ -28,15 +27,7 @@ class StatController extends Controller
      */
     public function contract()
     {
-        $months = Contract::select(
-            DB::raw('sum(amount) as `sums`'),
-            DB::raw("DATE_FORMAT(contract_date,'%Y.%m') as months")
-        )
-            ->groupBy('months')
-            ->orderBy('months')
-            ->get()
-            ->pluck('months', 'sums')
-            ->toArray();
+        $months = StatHelper::getContractStatByMonths();
 
         $chart = $this->chartService->createChart(
             [
