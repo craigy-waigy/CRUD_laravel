@@ -37,6 +37,12 @@ class GithubController extends Controller
                 Auth::login($user);
                 return redirect()->intended('dashboard');
             }else{
+                //проверим, нет ли уже пользователя с таким email
+                 $isRegistered = User::where('email', $socialUser->email)->first();
+                 if($isRegistered) {
+                     return redirect('/login')->with('error', 'С таким email пользователь уже зарегистрирован');
+                 }
+
                 $newUser = User::create([
                     'name' => $socialUser->nickname ?? $socialUser->name ?? $socialUser->email,
                     'email' => $socialUser->email,
